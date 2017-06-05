@@ -9,6 +9,12 @@ var campgrounds = [
         { name: "AAA", image: "http://www.herbalbear.com/pix/camping-tent-480.jpg" },
         { name: "BBB", image: "https://s3.amazonaws.com/images.gearjunkie.com/uploads/2015/10/Hunting-Tent-700x525.jpg" },
         { name: "CCC", image: "https://s3.amazonaws.com/images.gearjunkie.com/uploads/2015/10/Canvas-Camp-Tent-2-700x429.jpg" },
+        { name: "AAA", image: "http://www.herbalbear.com/pix/camping-tent-480.jpg" },
+        { name: "BBB", image: "https://s3.amazonaws.com/images.gearjunkie.com/uploads/2015/10/Hunting-Tent-700x525.jpg" },
+        { name: "CCC", image: "https://s3.amazonaws.com/images.gearjunkie.com/uploads/2015/10/Canvas-Camp-Tent-2-700x429.jpg" },
+        { name: "AAA", image: "http://www.herbalbear.com/pix/camping-tent-480.jpg" },
+        { name: "BBB", image: "https://s3.amazonaws.com/images.gearjunkie.com/uploads/2015/10/Hunting-Tent-700x525.jpg" },
+        { name: "CCC", image: "https://s3.amazonaws.com/images.gearjunkie.com/uploads/2015/10/Canvas-Camp-Tent-2-700x429.jpg" },
     ];
 
 app.get("/", function (req, res) {
