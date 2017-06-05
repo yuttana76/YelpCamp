@@ -12,5 +12,5 @@ Initial projects
 >npm init
 >npm install express ejs --save
  
->node app.js  // run application
+>node app.js  // run applicationcl
 
