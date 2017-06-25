@@ -25,13 +25,7 @@ router.get("/comments/new",isLoggedIn, function (req, res) {
 
 //CREATE comments
 router.post("/comments", function (req, res) {
-    // var campgourndId = req.params.id;
-
-    // var vText = req.body.text;
-    // var vAuthor = req.body.author;
-    // var comment = { text: vText, author: vAuthor };
     var comment = req.body.comment;
-
     Campground.findById(req.params.id, function (err, foundCampground) {
         if (err) {
             console.log(err);
@@ -43,7 +37,16 @@ router.post("/comments", function (req, res) {
                     console.log(err);
                     // res.redirect("/campgrounds/" + campgourndId);
                 } else {
-                    // console.log(newComment);
+                    // Add username and id  to comment
+                    newComment.author.id = req.user._id;
+                    newComment.author.username = req.user.username;
+
+                    // Save Comment
+                    newComment.save();
+
+                    console.log("Author"+ newComment.author );
+
+                    // Save associate
                     foundCampground.comments.push(newComment);
                     foundCampground.save();
 
