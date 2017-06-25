@@ -2,6 +2,7 @@ var express = require("express"),
     app = express(),
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
+    methodOverride = require("method-override");
     bodyparser = require("body-parser"),
     Campground = require("./models/campgrounds"),
     Comment = require("./models/comment"),
@@ -18,8 +19,7 @@ var campgoundRoutes = require("./routes/campgroundRoute"),
 app.use(bodyparser.urlencoded({ extended: true }));
 app.set("view engine", "ejs")
 app.use(express.static(__dirname + "/public"));
-// console.log("__dirname>>" + __dirname);
-
+app.use(methodOverride("_method"));
 // PASSPORT Configuration
 app.use(require("express-session")({
     secret: "I am PHAYAO.",
@@ -40,7 +40,7 @@ app.use(function(req,res,next){
 });
 
 app.use(indexRoutes);
-app.use(campgoundRoutes);
+app.use("/campgrounds",campgoundRoutes);
 app.use("/campgrounds/:id",commentRoutes); //Add prefix before call route file.
 
 //========================
