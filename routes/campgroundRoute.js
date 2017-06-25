@@ -20,7 +20,7 @@ router.get("/campgrounds", function (req, res) {
 }); 
 
 // NEW FORM
-router.get("/campgrounds/new", function (req, res) {
+router.get("/campgrounds/new",isLoggedIn, function (req, res) {
     res.render("campgrounds/new");
 });
 
@@ -30,11 +30,16 @@ router.post("/campgrounds",isLoggedIn,function (req, res) {
     var vName = req.body.name;
     var vImate = req.body.image;
     var vDesc = req.body.description;
-    var newCampGround = { name: vName, image: vImate, description: vDesc };
+    var author ={
+        id: req.user._id,
+        username: req.user.username
+    };
+    var newCampGround = { name: vName, image: vImate, description: vDesc ,author: author};
     Campground.create(newCampGround, function (err, newlyCampground) {
         if (err) {
             console.log(err);
         } else {
+            console.log(newCampGround);
             res.redirect("/campgrounds");
         };
     });

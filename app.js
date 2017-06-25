@@ -13,7 +13,7 @@ var campgoundRoutes = require("./routes/campgroundRoute"),
     commentRoutes = require("./routes/commentRoute"),
     indexRoutes = require("./routes/indexRoute")
 
-SeedDB();
+//SeedDB();
 
 app.use(bodyparser.urlencoded({ extended: true }));
 app.set("view engine", "ejs")
