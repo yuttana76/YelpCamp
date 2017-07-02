@@ -1,0 +1,20 @@
+<% include ../partials/header %>
+
+    <div class="container">
+        <div class="row">
+            <h1 style="text-align: center"> Edit comments </h1>
+            <div style="width: 30%; margin: 25px auto;">
+
+                <form method="POST" action="/campgrounds/<%= campground_id %>/comments/<%= comment._id %>/?_method=PUT">
+                    <div class="form-group">
+                        <textarea id="commentTextarea" rows="4" cols="50" name="comment[text]"><%= comment.text %></textarea>
+                    </div>
+                    <!--<p><%= comment.author.username %>-->
+                    <div class="form-group">
+                        <button class="btn btn-sm btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <% include ../partials/footer %>
