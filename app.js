@@ -41,7 +41,7 @@ app.use(function(req,res,next){
 
 app.use(indexRoutes);
 app.use("/campgrounds",campgoundRoutes);
-app.use("/campgrounds/:id",commentRoutes); //Add prefix before call route file.
+app.use("/campgrounds/:id/comments",commentRoutes); //Add prefix before call route file.
 
 //========================
 // Server listening
