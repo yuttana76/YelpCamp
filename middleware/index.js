@@ -15,6 +15,7 @@ indexMiddleware.isLoggedIn = function(req, res, next) {
      if (req.isAuthenticated()) {
         return next();
     }
+    req.flash("error","Pleash login first!!!");
     res.redirect("/login");
 }
 
