@@ -3,7 +3,7 @@ var mongoose = require("mongoose"),
     Comment = require("./models/comment")
 
 //Connection database
-mongoose.connect("mongodb://localhost/yelp_camp"); 
+//mongoose.connect("mongodb://localhost/yelp_camp"); 
 
 var data = [
     {
