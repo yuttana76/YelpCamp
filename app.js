@@ -58,10 +58,10 @@ app.use("/campgrounds/:id/comments",commentRoutes); //Add prefix before call rou
 //========================
 // Server listening
 //========================
-app.listen(3000, function () {
-    console.log("The YelpCamp Server Has Started !!!");
-})
-
-// app.listen(process.env.PORT, process.env.IP, function () {
+// app.listen(3000, function () {
 //     console.log("The YelpCamp Server Has Started !!!");
 // })
+
+app.listen(process.env.PORT, process.env.IP, function () {
+    console.log("The YelpCamp Server Has Started !!!");
+})
