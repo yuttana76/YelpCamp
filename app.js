@@ -46,6 +46,7 @@ app.use(function(req,res,next){
     next(); // important to all routes to do the next page
 });
 
+//ROUTES
 app.use(indexRoutes);
 app.use("/campgrounds",campgoundRoutes);
 app.use("/campgrounds/:id/comments",commentRoutes); //Add prefix before call route file.

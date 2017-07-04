@@ -30,12 +30,13 @@ router.post("/", middleware.isLoggedIn, function (req, res) {
     //Add data form from data And add to campground array.
     var vName = req.body.name;
     var vImate = req.body.image;
+    var vPrice = req.body.price;
     var vDesc = req.body.description;
     var author = {
         id: req.user._id,
         username: req.user.username
     };
-    var newCampGround = { name: vName, image: vImate, description: vDesc, author: author };
+    var newCampGround = { name: vName,price: vPrice, image: vImate, description: vDesc, author: author };
     Campground.create(newCampGround, function (err, newlyCampground) {
         if (err) {
             console.log(err);
