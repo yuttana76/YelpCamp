@@ -8,6 +8,7 @@ var express = require("express"),
     Campground = require("./models/campgrounds"),
     Comment = require("./models/comment"),
     User = require("./models/user"),
+    mongoose = require("mongoose");
     SeedDB = require("./seeds.js")
 
 //Require routes.
@@ -16,6 +17,9 @@ var campgoundRoutes = require("./routes/campgroundRoute"),
     indexRoutes = require("./routes/indexRoute")
 
 //SeedDB();
+
+// mongoose.connect("mongodb://localhost/yelp_camp"); 
+mongoose.connect("mongodb://bom:password@ds123722.mlab.com:23722/itech"); 
 
 app.use(bodyparser.urlencoded({ extended: true }));
 app.set("view engine", "ejs")
