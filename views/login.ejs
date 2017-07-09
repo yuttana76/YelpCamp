@@ -1,12 +1,24 @@
 <% include ./partials/header %>
 
-<h1>Login </h1>
+    <div class="container">
+        <div class="row well">
+            <h1 style="text-align: center">Login </h1>
+            <div style="width: 30%; margin: 25px auto;">
+                <form method="POST" action="/login">
+                    <div class="form-group">
+                        <input type="text" name="username" placeholder="Username">
+                    </div>
 
-<form method="POST" action="/login">
-<input type="text" name="username" placeholder="Username">
-<input type="password" name="password">
-<input type="submit" value="Login">
+                    <div class="form-group">
+                        <input type="password" name="password">
+                    </div>
 
-</form>
+                    <div class="form-group">
+                        <input type="submit" value="Login">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-<% include ./partials/footer %>
+    <% include ./partials/footer %>
