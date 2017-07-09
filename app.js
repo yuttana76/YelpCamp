@@ -26,6 +26,7 @@ app.use(methodOverride("_method"));
 app.use(flash());
 //SeedDB();
 
+
 // PASSPORT Configuration
 app.use(require("express-session")({
     secret: "I am PHAYAO.",
